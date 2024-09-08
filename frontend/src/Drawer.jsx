@@ -20,6 +20,13 @@ const SideDrawer = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [placement, setPlacement] = React.useState('left')
 
+    const scrollDown = () => {
+        const currentScrollPosition = window.scrollY; // or window.pageYOffset
+  
+        
+          window.scrollTo({ top: 1250, behavior: 'smooth' });
+          };
+
     return (
         <>
 
@@ -41,13 +48,16 @@ const SideDrawer = () => {
                         <div className="button-list">
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">Button 1</Button>
+                            }} className="custom-button">Home</Button>
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">Button 2</Button>
+                            }} className="custom-button">Abput Us</Button>
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">Button 3</Button>
+                            }} className="custom-button">Contact Us</Button>
+                            <Button backgroundColor='white' _hover={{
+                                backgroundColor: 'white', // Change background color on hover
+                            }} className="custom-button" onClick={scrollDown}>Services & Portofolio</Button>
                         </div>
                     </DrawerBody>
                     <DrawerFooter alignItems='flex-start' justifyContent='flex-start'>

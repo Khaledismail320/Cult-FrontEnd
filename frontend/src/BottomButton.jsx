@@ -5,8 +5,13 @@ import { Button } from '@chakra-ui/react';
 
 const BottomButton = () => {
     const scrollDown = () => {
-        window.scrollTo({ top: 700, behavior: 'smooth' });
-    };
+      const currentScrollPosition = window.scrollY; // or window.pageYOffset
+
+      if (currentScrollPosition < 700) {
+          window.scrollTo({ top: 700, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 1250, behavior: 'smooth' });
+      }    };
   return (
     <Button
       position="fixed" // Fix the position to the bottom
