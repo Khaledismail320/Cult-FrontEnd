@@ -10,13 +10,15 @@ const BottomButton = () => {
       if (currentScrollPosition < 700) {
           window.scrollTo({ top: 700, behavior: 'smooth' });
       } else {
-        window.scrollTo({ top: 1250, behavior: 'smooth' });
+        window.scrollTo({ top: 1280, behavior: 'smooth' });
       }    };
   return (
+    <div style={{justifyContent:'center',alignItems:'center',marginLeft:'48.2%'}}>
     <Button
       position="fixed" // Fix the position to the bottom
       bottom="10px"    // Distance from the bottom of the screen
-      left='48%'     // Distance from the right of the screen
+      // left='48.2%'  
+         
       colorScheme="blackAlpha"
       variant="solid"
       size="lg"
@@ -35,6 +37,7 @@ const BottomButton = () => {
         transform="rotate(90deg)" // Rotate to face downwards
       />
     </Button>
+    </div>
   );
 };
 

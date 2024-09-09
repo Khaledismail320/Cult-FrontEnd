@@ -235,5 +235,7 @@
     position: absolute; /* Absolute positioning to allow full control of placement */
     font-weight: 800;
     margin-top:40px;
-    left: 40%; /* Position it horizontally in the middle */
+     /* Position it horizontally in the middle */
 }
+
+

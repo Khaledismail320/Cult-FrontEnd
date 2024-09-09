@@ -13,7 +13,7 @@ const HomePage = () =>{
 
     return(
         <div>
-            <Navbar/>
+            
 
         
         <div className="home-container" style={{ display: "block", position: "relative" }}>
@@ -45,7 +45,7 @@ const HomePage = () =>{
 
             </div>
             <div className="servicesBackground">
-                <label className="labeltest" style={{fontSize:'40px'}} >Explore Services</label>
+                <label className="labeltest" style={{fontSize:'40px',marginLeft: '40%'}} >Explore Services</label>
                 
                 <div style={{ display: 'flex', justifyContent: 'center',marginLeft:'15%' }}>
           <div style={{  marginTop: '150px' }}> {/* Adjust the width as needed */}

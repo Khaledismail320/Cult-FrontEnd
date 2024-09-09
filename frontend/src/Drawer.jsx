@@ -57,7 +57,7 @@ const SideDrawer = () => {
                             }} className="custom-button">Contact Us</Button>
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button" onClick={scrollDown}>Services & Portofolio</Button>
+                            }} className="custom-button" onClick={scrollDown}>Services & Portflio</Button>
                         </div>
                     </DrawerBody>
                     <DrawerFooter alignItems='flex-start' justifyContent='flex-start'>
