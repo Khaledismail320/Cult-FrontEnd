@@ -14,11 +14,18 @@ import {
 import { useDisclosure } from '@chakra-ui/react';
 import { RadioGroup, Radio, Stack } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-
+import { useNavigate } from 'react-router-dom';
 
 const SideDrawer = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [placement, setPlacement] = React.useState('left')
+
+    const navigate= useNavigate();
+
+  const handleNav= (url)=>{
+    navigate(url);
+    window.scrollTo(0, 0);
+  }
 
     const scrollDown = () => {
         const currentScrollPosition = window.scrollY; // or window.pageYOffset
@@ -26,6 +33,18 @@ const SideDrawer = () => {
         
           window.scrollTo({ top: 1250, behavior: 'smooth' });
           };
+
+
+          const services= () =>{
+            handleNav('/');
+            setTimeout(() => {
+                const section = document.getElementById('services-section');
+                console.log(section);
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth',block:'nearest' });
+                }
+              }, 300); // Adjust the delay as needed (300ms is often enough)       
+          }
 
     return (
         <>
@@ -46,18 +65,23 @@ const SideDrawer = () => {
         </div></DrawerHeader>
                     <DrawerBody>
                         <div className="button-list">
-                            <Button backgroundColor='white' _hover={{
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/')}}  _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Home</Button>
-                            <Button backgroundColor='white' _hover={{
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/AboutUs')}} _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">Abput Us</Button>
-                            <Button backgroundColor='white' _hover={{
+                            }} className="custom-button">About Us</Button>
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/Contactus')}}  _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Contact Us</Button>
+
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button" onClick={scrollDown}>Services & Portflio</Button>
+                            }} className="custom-button" onClick={services}> Services & Portflio</Button>
+
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/BookNow')}} _hover={{
+                                backgroundColor: 'white', // Change background color on hover
+                            }} className="custom-button">Book Now</Button>
                         </div>
                     </DrawerBody>
                     <DrawerFooter alignItems='flex-start' justifyContent='flex-start'>

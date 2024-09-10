@@ -11,13 +11,22 @@ import minime from './images/minime.jpeg'
 import BottomButton from "./BottomButton";
 import Footer from './Footer';
  
-
+import { useNavigate } from 'react-router-dom';
 
 const GDP = () => {
+  const navigate = useNavigate();
 
   const openPage = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
+
+  const handlenav = (url) =>{
+    navigate(url);
+    window.scrollTo(0, 0);
+
+
+
+  }
 
   return (
     <div>
@@ -52,7 +61,7 @@ const GDP = () => {
             width="100%"  // Grid takes the full width of its parent container
           >
             <Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
             // Darker shadow on hover for better interaction
             >
               <CardBody>
@@ -75,8 +84,8 @@ const GDP = () => {
 
             </Card>
             <Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
@@ -97,8 +106,8 @@ const GDP = () => {
 
 
             </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
@@ -119,8 +128,8 @@ const GDP = () => {
 
 
             </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
@@ -141,8 +150,8 @@ const GDP = () => {
 
 
             </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
@@ -163,8 +172,8 @@ const GDP = () => {
 
 
             </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
+              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
+              // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
@@ -210,7 +219,7 @@ const GDP = () => {
           What are you waiting for? Book Now and elevate your business !
         </label>
         <br/>
-        <button  style={{ width: '30%', marginTop: '30px',fontSize:'20px',marginBottom:'100px' }} className="navbar-button">Book Now</button>
+        <button onClick={()=>{handlenav('/BookNow')}}  style={{ width: '30%', marginTop: '30px',fontSize:'20px',marginBottom:'100px' }} className="booknow">Book Now</button>
       </div>
 <BottomButton/>
     </div>

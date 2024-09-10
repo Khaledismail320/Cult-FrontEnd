@@ -25,7 +25,7 @@ const HomePage = () =>{
                 Cult Agency brings your brand’s vision to life through innovative web development, dynamic digital marketing, and captivating visual content.
                 </label>
             </div>
-            <div style={{height:'490px'}}>
+            <div id='home-description' style={{height:'490px'}}>
 
             <div class="image-text-container">
             <img src={descriptionImage} alt="descriptionImage" class="imageStyle" />

@@ -84,13 +84,13 @@
     font-weight: 800;
 }
 
-.navbar-button.home{
-    background-color: #b70000;
+.navbar-button.cards{
+    background-color: #000000;
     color: white;
 }
 
-.navbar-button.home:hover{
-    background-color: #000000;
+.navbar-button.cards:hover{
+    background-color: #898989;
     color: rgb(255, 255, 255);
 }
 
@@ -100,6 +100,27 @@
     color: white;
 }
 
+.booknow{
+  padding: 8px 15px;
+    font-size: 16px;
+    color: white;
+    /* background-color: white; */
+    /* border: 1px solid black; */
+    background-color: black; /* Slightly transparent background */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: League Spartan;
+    font-weight: 800;
+
+}
+.booknow:hover{
+  background-color: #898989;
+    color: rgb(255, 255, 255);
+
+}
 
 .home-container {
     width: 100%;
