@@ -56,10 +56,10 @@ const Footer = () => {
           <HStack spacing={4}>
           <Link href="/" fontWeight="bold" color="black">Home</Link>
 
-            <Link href="/aboutus" fontWeight="bold" color="black">About Us</Link>
+            <Link href="/AboutUs" fontWeight="bold" color="black">About Us</Link>
             <Link onClick={services} fontWeight="bold" color="black">Services & Portfolio</Link>
-            <Link href="/blog" fontWeight="bold" color="black">Blog</Link>
-            <Link href="/contactus" fontWeight="bold" color="black">Contact Us</Link>
+            <Link href="/Blog" fontWeight="bold" color="black">Blog</Link>
+            <Link href="/ContactUs" fontWeight="bold" color="black">Contact Us</Link>
           </HStack>
         </Stack>
 

@@ -82,6 +82,9 @@ const SideDrawer = () => {
                             <Button backgroundColor='white' onClick={()=>{handleNav('/BookNow')}} _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Book Now</Button>
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/Blog')}} _hover={{
+                                backgroundColor: 'white', // Change background color on hover
+                            }} className="custom-button">Blog</Button>
                         </div>
                     </DrawerBody>
                     <DrawerFooter alignItems='flex-start' justifyContent='flex-start'>
