@@ -216,7 +216,7 @@ const GDP = () => {
         <br/>
         <button onClick={()=>{handlenav('/BookNow')}}  style={{ width: '30%', marginTop: '30px',fontSize:'20px',marginBottom:'100px' }} className="booknow">Book Now</button>
       </div>
-<BottomButton/>
+
     </div>
 
   )
