@@ -16,7 +16,7 @@ const AboutUs = () => {
       />
       <div style={{justifyContent:'center',alignItems:'center',width:'100%',display: 'flex'}}>
 
-      <Box bg="white" color="black" fontFamily="'League Spartan', sans-serif" p={8} width='60%'>
+      <Box bg="white" color="black" fontFamily="'League Spartan', sans-serif" p={8} width='80%'>
       <Heading textAlign='center' size="lg" mb={4}>Cult Agency</Heading>
 
         {/* Overview Section */}

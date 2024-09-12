@@ -42,6 +42,7 @@ const SideDrawer = () => {
                 console.log(section);
                 if (section) {
                   section.scrollIntoView({ behavior: 'smooth',block:'nearest' });
+                  
                 }
               }, 300); // Adjust the delay as needed (300ms is often enough)       
           }
@@ -60,7 +61,7 @@ const SideDrawer = () => {
             <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerHeader className='leagueSpartan' fontWeight='1000' fontSize='35px' alignContent='center' justifyContent='center' marginLeft='31%' ><div >
+                    <DrawerHeader className='leagueSpartan' fontWeight='1000' fontSize='35px' alignContent='center' justifyContent='center' marginLeft='32%' ><div >
           <img src={cultLogo} alt="cultLogo" className='logo-img' />
         </div></DrawerHeader>
                     <DrawerBody>
@@ -68,12 +69,7 @@ const SideDrawer = () => {
                             <Button backgroundColor='white' onClick={()=>{handleNav('/')}}  _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Home</Button>
-                            <Button backgroundColor='white' onClick={()=>{handleNav('/AboutUs')}} _hover={{
-                                backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">About Us</Button>
-                            <Button backgroundColor='white' onClick={()=>{handleNav('/Contactus')}}  _hover={{
-                                backgroundColor: 'white', // Change background color on hover
-                            }} className="custom-button">Contact Us</Button>
+                            
 
                             <Button backgroundColor='white' _hover={{
                                 backgroundColor: 'white', // Change background color on hover
@@ -82,6 +78,12 @@ const SideDrawer = () => {
                             <Button backgroundColor='white' onClick={()=>{handleNav('/BookNow')}} _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Book Now</Button>
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/AboutUs')}} _hover={{
+                                backgroundColor: 'white', // Change background color on hover
+                            }} className="custom-button">About Us</Button>
+                            <Button backgroundColor='white' onClick={()=>{handleNav('/Contactus')}}  _hover={{
+                                backgroundColor: 'white', // Change background color on hover
+                            }} className="custom-button">Contact Us</Button>
                             <Button backgroundColor='white' onClick={()=>{handleNav('/Blog')}} _hover={{
                                 backgroundColor: 'white', // Change background color on hover
                             }} className="custom-button">Blog</Button>
@@ -90,7 +92,7 @@ const SideDrawer = () => {
                     <DrawerFooter alignItems='flex-start' justifyContent='flex-start'>
       
         
-        <ul className="contact-list">
+        <ul className="contact-list" style={{fontSize:'15px'}}>
           <li>Phone: +20 150 051 1826</li>
           <li>Email: info@cultsmma.com</li>
         </ul>

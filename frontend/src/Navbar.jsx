@@ -24,11 +24,11 @@ const navigate= useNavigate();
         <div className="logo-container">
           <img src={cultLogo} alt="cultLogo" className='logo-img' />
         </div>
-        <div className="navbar-buttons">
+        {/* <div className="navbar-buttons">
           <button onClick={()=>{handleNav('/')}} className="navbar-button">Home</button>
           <button onClick={()=>{handleNav('/AboutUs')}} className="navbar-button">About Us</button>
           <button onClick={()=>{handleNav('/ContactUs')}} className="navbar-button">Contact Us</button>
-        </div>
+        </div> */}
       </nav>
     </div>
   );
