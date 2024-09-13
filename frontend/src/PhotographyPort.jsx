@@ -1,26 +1,49 @@
-import { React, useState } from 'react'
-import { SimpleGrid, Card, CardHeader, Heading, CardBody, Text, CardFooter, Button, Image, Stack, Divider, ButtonGroup } from '@chakra-ui/react';
-import Navbar from "./Navbar";
-import rodniture from './images/rodniture.jpg'
-import dtrips from './images/dtrips.jpeg'
-import giaco from './images/giaco.jpeg'
-import livingo from './images/livingo.jpeg'
-import maha from './images/maha.jpeg'
-import minime from './images/minime.jpeg'
-import waveway from './images/i3.png'
-import brinect from './images/b3.jpeg'
-import BottomButton from "./BottomButton";
-import Footer from './Footer';
- 
+import {React,useState} from 'react';
+import img1 from './Photography/Copy of 31.jpg';
+import img2 from './Photography/Copy of 32.jpg';
+import img3 from './Photography/Copy of 29.jpg';
+import img4 from './Photography/Copy of 28.jpg';
+import img5 from './Photography/Copy of 21.jpg';
+import img6 from './Photography/Copy of 22.jpg';
+import img7 from './Photography/Copy of 25.jpg';
+import img8 from './Photography/Copy of 30.jpg';
+import img9 from './Photography/Copy of 24.jpg';
+import img10 from './Photography/Copy of 26.jpg';
+import img11 from './Photography/Copy of 23.jpg';
+import img12 from './Photography/Copy of 27.jpg';
+import img13 from './Photography/Copy of 13.jpg';
+import img14 from './Photography/Copy of 11.jpg';
+import img15 from './Photography/Copy of 18.jpg';
+import img16 from './Photography/Copy of 12.jpg';
+import img17 from './Photography/Copy of 14.jpg';
+import img18 from './Photography/Copy of 17.jpg';
+import img19 from './Photography/Copy of 15.jpg';
+import img20 from './Photography/Copy of 19.jpg';
+import img21 from './Photography/Copy of 20.jpg';
+import img22 from './Photography/Copy of 16.jpg';
+import img23 from './Photography/Copy of 7.jpg';
+import img24 from './Photography/Copy of 5.jpg';
+import img25 from './Photography/Copy of 3.jpg';
+import img26 from './Photography/Copy of 6.jpg';
+import img27 from './Photography/Copy of 2.jpg';
+import img28 from './Photography/Copy of 10.jpg';
+import img29 from './Photography/Copy of 9.jpg';
+import img30 from './Photography/Copy of 1.jpg';
+import img31 from './Photography/Copy of 4.jpg';
+import img32 from './Photography/Copy of 8.jpg';
 import { useNavigate } from 'react-router-dom';
 
-const WDP = () => {
-  const navigate = useNavigate();
+const PhotoGallery = () => {
+  const images = [
+    img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+    img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+    img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
+    img31, img32
+  ];
 
-  const openPage = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
+  const [selectedImage, setSelectedImage] = useState(null); // State to hold the clicked image
 
+  const navigate=useNavigate();
   const handlenav = (url) =>{
     navigate(url);
     window.scrollTo(0, 0);
@@ -29,10 +52,13 @@ const WDP = () => {
 
   }
 
-  return (
-    <div >
-      <Navbar />
+  // Function to close the modal
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
+  return (
+    <div>
       <div style={{ textAlign: 'center', marginTop: '100px', justifyContent:'center', alignItems:'center' }}>
         <label
           className='labeltest'
@@ -46,77 +72,24 @@ const WDP = () => {
             marginTop: '0px'
           }}
         >
-          Our Web Development Clients
+          Our Photography Gallery
         </label>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '70px', marginBottom: '40px' }}>
-        <div style={{ width: '80%' }}>
-
-
-
-          <SimpleGrid spacing={10}  // Space between the cards
-            minChildWidth="250px" 
-            
-             // This ensures a minimum width for each card
-              // Grid takes the full width of its parent container
-              justifyContent='center'
-              alignItems='center'
-          >
-            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-            // Darker shadow on hover for better interaction
-            >
-              <CardBody justifyContent='center' alignItems='center'>
-                <Image
-                  
-                  
-                  src={waveway}
-                  borderRadius='full'
-                  boxSize='175px'      // Ensures the image has equal width and height
-                  objectFit='cover'
-                  objectPosition='center'
-                />
-                <Stack mt='6' spacing='3' justifyContent='center' alignItems='center'>
-                  <Heading size='md'  >Wave Way</Heading>
-
-                  <button onClick={() => openPage('https://wave-way.com/')} style={{ width: '80%', marginTop: '30px' }} className="navbar-button">Visit Page</button>
-                </Stack>
-              </CardBody>
-
-
-            </Card>
-            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
-              _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
-              // Darker shadow on hover for better interaction
-            >
-              <CardBody >
-                <Image
-                  
-                  src={brinect}
-                  borderRadius='full'
-                  boxSize='175px'      // Ensures the image has equal width and height
-                  objectFit='cover'
-                  objectPosition='center'
-                />
-                <Stack mt='6' spacing='3' justifyContent='center' alignItems='center'>
-                  <Heading size='md'  >Brinect</Heading>
-
-                  <button onClick={() => openPage('https://brinect-site.co/')} style={{ width: '80%', marginTop: '30px' }} className="navbar-button">Visit Page</button>
-                </Stack>
-              </CardBody>
-
-
-            </Card>
-
-          </SimpleGrid>
-
-
-
-
+      <div className="gallery-container">
+        <div className="grid-container">
+          {images.map((image, index) => (
+            <div key={index} className="grid-item">
+              <img
+                src={image}
+                alt={`Photography ${index + 1}`}
+                onClick={() => setSelectedImage(image)} // Set clicked image
+                style={{ cursor: 'pointer' }} // Indicate clickable image
+              />
+            </div>
+          ))}
         </div>
       </div>
-
       <div id='book-now' style={{ textAlign: 'center', marginTop: '100px',display:'block' }}>
         <label
           className='labeltest'
@@ -135,9 +108,18 @@ const WDP = () => {
         <br/>
         <button onClick={()=>{handlenav('/BookNow')}}  style={{ width: '30%', marginTop: '30px',fontSize:'20px',marginBottom:'100px' }} className="booknow">Book Now</button>
       </div>
-<BottomButton/>
-    </div>
 
-  )
-}
-export default WDP;
+      {/* Modal to show enlarged image */}
+      {selectedImage && (
+        <div className="modal" onClick={closeModal}>
+          <span className="close-button" onClick={closeModal}>
+            &times;
+          </span>
+          <img className="modal-content" src={selectedImage} alt="Enlarged view" />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default PhotoGallery;
