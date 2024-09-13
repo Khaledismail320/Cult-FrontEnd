@@ -42,8 +42,10 @@ const BottomButton = () => {
       case 'home-description':
         window.scrollTo({ top: document.getElementById('services-section').offsetTop, behavior: 'smooth' });
         break;
+      case 'services-section' :
+        window.scrollTo({ top: 0, behavior: 'smooth' }); break;
       default:
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top if no section is found
+        break;
     }
   };
   
