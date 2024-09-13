@@ -29,10 +29,10 @@ const GDP = () => {
   }
 
   return (
-    <div>
+    <div >
       <Navbar />
 
-      <div style={{ textAlign: 'center', marginTop: '100px' }}>
+      <div style={{ textAlign: 'center', marginTop: '100px', justifyContent:'center', alignItems:'center' }}>
         <label
           className='labeltest'
           style={{
@@ -49,25 +49,25 @@ const GDP = () => {
         </label>
       </div>
 
-      <div style={{ display: 'flexbox', justifyContent: 'center', marginLeft: "3%", marginRight: '2%', width: '90%' }}>
-        <div style={{ marginTop: '70px', marginBottom: '40px' }}> {/* Adjust the width as needed */}
-
-
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '70px', marginBottom: '40px' }}>
+        <div style={{ width: '80%' }}>
 
 
 
           <SimpleGrid spacing={10}  // Space between the cards
             minChildWidth="250px"  // This ensures a minimum width for each card
-            width="100%"  // Grid takes the full width of its parent container
+              // Grid takes the full width of its parent container
+              justifyContent='center'
+              alignItems='center'
           >
-            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
             // Darker shadow on hover for better interaction
             >
-              <CardBody>
+              <CardBody justifyContent='center' alignItems='center'>
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
+                  
                   src={rodniture}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -83,14 +83,13 @@ const GDP = () => {
 
 
             </Card>
-            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            <Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
               // Darker shadow on hover for better interaction
             >
-              <CardBody>
+              <CardBody >
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
                   src={livingo}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -105,14 +104,13 @@ const GDP = () => {
               </CardBody>
 
 
-            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
               // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
                   src={dtrips}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -127,14 +125,13 @@ const GDP = () => {
               </CardBody>
 
 
-            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
               // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
                   src={minime}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -149,14 +146,13 @@ const GDP = () => {
               </CardBody>
 
 
-            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
               // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
                   src={maha}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -171,14 +167,13 @@ const GDP = () => {
               </CardBody>
 
 
-            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid'
+            </Card><Card minW='250px' height='sm' boxShadow='lg' border='1px solid' justifyContent='center' alignItems='center'
               _hover={{ transform: 'translateY(-10px)', boxShadow: '2xl',backgroundColor:'black',color:'white' }} transition="0.2s" // Adding a larger shadow for a subtle effect
               // Darker shadow on hover for better interaction
             >
               <CardBody>
                 <Image
-                  marginLeft='13%'
-                  marginRight='50px'
+                  
                   src={giaco}
                   borderRadius='full'
                   boxSize='175px'      // Ensures the image has equal width and height
@@ -203,7 +198,7 @@ const GDP = () => {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', marginTop: '100px',display:'block' }}>
+      <div id='book-now' style={{ textAlign: 'center', marginTop: '100px',display:'block' }}>
         <label
           className='labeltest'
           style={{
@@ -221,7 +216,7 @@ const GDP = () => {
         <br/>
         <button onClick={()=>{handlenav('/BookNow')}}  style={{ width: '30%', marginTop: '30px',fontSize:'20px',marginBottom:'100px' }} className="booknow">Book Now</button>
       </div>
-<BottomButton/>
+
     </div>
 
   )

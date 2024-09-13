@@ -52,7 +52,8 @@
 .logo-img {
     height: 50px; /* Adjust the height as needed */
     margin-top: 2px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
+    /* margin-right: 4.8%; */
     width:auto;
 }
 
@@ -100,6 +101,8 @@
     color: white;
 }
 
+
+
 .booknow{
   padding: 8px 15px;
     font-size: 16px;
@@ -121,14 +124,113 @@
     color: rgb(255, 255, 255);
 
 }
-
 .home-container {
-    width: 100%;
-    height: 750px;
-    background-image: url('./images/back.jpg');
-    background-size: cover; /* Adjust as needed */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%;
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  background-image: url('./images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1; /* Ensure it sits behind the text */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Ensure it is above the background overlay */
+  z-index: 2; /* Ensure it is above the background overlay */
+}
+
+.leagueSpartan {
+  font-family: 'League Spartan', sans-serif;
+  
+  /* No explicit margin or padding for spacing */
+}
+
+.title {
+  font-weight: 900;
+  font-size: 2.5rem; /* Responsive font size */
+  color: #fff;
+}
+
+ul {
+  padding-left: 20px; /* Ensure proper indentation for bullets */
+  list-style-type: disc; /* Ensure bullets are displayed */
+  margin-bottom: 1rem; /* Add space between list and other elements */
+}
+
+li {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 20px; /* Adjust font size for readability on mobile */
+  color: #000000; /* White font color */
+  line-height: 1.6; /* Increase line spacing */
+  margin-bottom: 0.5rem; /* Add space between list items */
+}
+
+
+.subtitle {
+  font-weight: 500;
+  font-size: 1.5rem; /* Responsive font size */
+  color: #fff;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem; /* Adjust font size for smaller screens */
   }
 
+  .subtitle {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .home-container {
+    width: 100%;
+    height: auto; /* Allow the height to adjust naturally */
+    min-height: 100vh; /* Remove fixed height constraints */
+  }
+
+  .background-overlay {
+    /* Make sure overlay covers the full viewport height */
+    height: 100vh;
+  }
+
+  .image-text-container {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    gap: 20px; /* Increase spacing between elements when stacked */
+  }
+
+  .imageStyle {
+
+    max-width: 90%;
+    max-height: 30vh;
+    min-height: 30vh; /* Ensure image takes full width on small screens */
+  }
+
+  .textStyle {
+    font-size: 18px; /* Adjust text size for smaller screens */
+  }
+}
 
 
   .custom-sider {
@@ -158,51 +260,78 @@
   
 
   .image-text-container {
-    display: flex;                /* Flexbox layout to align items horizontally */
-    align-items: center;          /* Vertically center the text and image */
-    gap: 15px;                    /* Add margin (gap) between the image and the text */
-    padding: 10px;                /* Optional padding inside the container */
-    background-color: #ffffff;    /* Optional background color for the container */
-    border-radius: 8px;           /* Optional rounded corners */
-    width: 100%;             /* Optional: limit container width */
-    margin-top: 65px;
-    position: relative;
-    height: 370;
-
-
-
-    /* margin: 20px auto;            Optional: center the container horizontally */
-}
-
-.logo-container {
-    flex-grow: 1; /* Takes up available space between sidebar and buttons */
     display: flex;
-    justify-content: center;
-    margin-left: 15%;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    height: auto; /* Adjust height for responsiveness */
+    flex-wrap: wrap; /* Allow items to wrap when space is limited */
 }
-
 
 .imageStyle {
-    height: 350px;                /* Set the height for the image */
-    width: auto; 
-    border-radius: 10px;                 /* Keep the aspect ratio */
+    flex: 1; /* Allow image to take up available space */
+    max-width: 50%; /* Limit image size on larger screens */
+    height: auto;
 }
 
 .textStyle {
-    margin-left: 2%;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 20px;
-    width:47%;
-    font-weight: 500;
-    margin-top: 10;
-    line-height: 28px;
+    flex: 1; /* Allow text to take up available space */
+    font-size: 19px;
+    width: 100%; /* Full width on smaller screens */
+    margin-top: 10px;
+    line-height: 2;
+    
 }
+
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        gap: 20px; /* Increase spacing between elements when stacked */
+    }
+
+    .imageStyle, .textStyle {
+        max-width: 90%; /* Ensure both image and text take full width */
+    }
+}
+
+
+.logo-container {
+  flex-grow: 1; /* Takes up available space between sidebar and buttons */
+  display: flex;
+  justify-content: center;
+  position: absolute; /* Center the logo absolutely */
+  left: 50%; /* Move it to the middle */
+  transform: translateX(-50%); /* Center it by shifting back half of its width */
+}
+
+
+
+/* .imageStyle {
+  height: 350px;               
+  width: auto; 
+  border-radius: 10px;              
+}
+
+.textStyle {
+  margin-left: 2%;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 20px;
+  width:47%;
+  font-weight: 500;
+  margin-top: 10;
+  line-height: 28px;
+} */
 
 
 .button-list {
     display: flex;
     flex-direction: column; /* Stack buttons vertically */
-    gap: 30px; /* Space between buttons */
+    gap: 20px; /* Space between buttons */
   }
   
   .custom-button {
@@ -242,21 +371,144 @@
   
   
 
- .servicesBackground{
+  .dashboard-grid-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    padding: 0 0rem; /* Optional: Add padding for responsiveness */
+    margin-top: 2rem;
+  }
+  
+  .servicesBackground {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+    background-color: #000000; /* Black background */
+  }
+  
+  .content-container {
+    text-align: center; /* Center text horizontally */
+    width: 80%;
     
-    background-color: #000000;
-    height: 800px;
- } 
-
-
- .labeltest {
-    font-family: 'League Spartan';
-    color: #ffffff; /* White font */
-    text-align: center; /* Horizontally center the title */
-    position: absolute; /* Absolute positioning to allow full control of placement */
+  }
+  
+  .labeltest {
+    font-family: 'League Spartan', sans-serif;
+    color: #ffffff; /* White font color */
+    font-size: 2.5rem; /* Responsive font size */
     font-weight: 800;
-    margin-top:40px;
-     /* Position it horizontally in the middle */
+    margin-bottom: 10rem; /* Space between the title and the grid */
+  }
+  
+  
+  @media (max-width: 768px) {
+    .labeltest {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+  }
+  
+
+
+/* Ensure the whole gallery is centered */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Make sure it takes up the whole vertical space */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Set up the grid */
+.grid-container {
+  width: 80%; /* Make the grid take up 80% of the page width */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 10px; /* Space between the images */
+  margin-top: 4rem;
+  justify-items: center; /* Center the items in each column */
+}
+
+/* Ensure the images are responsive */
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures images cover the grid space */
+  border-radius: 5px; /* Add a slight border radius for aesthetics */
+  cursor: pointer;
+}
+
+/* Mobile-specific adjustments for small screens */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Smaller grid items on mobile */
+    width: 90%; /* Make the grid a little wider on mobile */
+  }
 }
 
 
+
+
+
+/* Close button styling */
+.close-button {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the close button */
+.close-button:hover {
+  background-color: #898989;
+}
+
+
+/* Modal container, slightly enlarging pop-up */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Lighter background */
+  animation: pop-up 0.3s ease-in-out; /* Add pop-up animation */
+}
+
+/* Pop-up animation for enlarging effect */
+@keyframes pop-up {
+  0% {
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+    opacity: 1;
+  }
+}
+
+/* Enlarged image in modal with slight padding and smoother transition */
+.modal-content {
+  max-width: 60%; /* Slightly smaller to give a popup effect */
+  max-height: 60%; /* Reduce size to feel like a popup */
+  border-radius: 10px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out; /* Smooth transition on open */
+}
