@@ -25,6 +25,7 @@ const SideDrawer = () => {
   const handleNav= (url)=>{
     navigate(url);
     window.scrollTo(0, 0);
+    onClose();
   }
 
     const scrollDown = () => {
@@ -41,10 +42,11 @@ const SideDrawer = () => {
                 const section = document.getElementById('services-section');
                 console.log(section);
                 if (section) {
-                  section.scrollIntoView({ behavior: 'smooth',block:'nearest' });
+                  section.scrollIntoView({ behavior: 'smooth',block:'start' });
                   
                 }
-              }, 300); // Adjust the delay as needed (300ms is often enough)       
+              }, 300); // Adjust the delay as needed (300ms is often enough)    
+              onClose();   
           }
 
     return (

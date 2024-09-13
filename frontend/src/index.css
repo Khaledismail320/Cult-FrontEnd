@@ -267,7 +267,6 @@ li {
     background-color: #ffffff;
     border-radius: 8px;
     width: 100%;
-    margin-top: 30px;
     position: relative;
     height: auto; /* Adjust height for responsiveness */
     flex-wrap: wrap; /* Allow items to wrap when space is limited */
@@ -389,6 +388,14 @@ li {
     background-color: #000000; /* Black background */
   }
   
+  .homeDescriptionSection {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the full viewport height */
+  }
+
   .content-container {
     text-align: center; /* Center text horizontally */
     width: 80%;

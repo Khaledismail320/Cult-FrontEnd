@@ -4,16 +4,49 @@ import { ArrowRightIcon } from '@chakra-ui/icons';
 import { Button } from '@chakra-ui/react';
 
 const BottomButton = () => {
-  const scrollDown = () => {
-    const currentScrollPosition = window.scrollY; // or window.pageYOffset
+  // const scrollDown = () => {
+  //   const currentScrollPosition = window.scrollY; // or window.pageYOffset
 
-    if (currentScrollPosition < 700) {
-      window.scrollTo({ top: 700, behavior: 'smooth' });
-    } else {
-      window.scrollTo({ top: 1280, behavior: 'smooth' });
+  //   if (currentScrollPosition < 700) {
+  //     window.scrollTo({ top: 700, behavior: 'smooth' });
+  //   } else {
+  //     window.scrollTo({ top: 1280, behavior: 'smooth' });
+  //   }
+  // };
+
+  const scrollDown = () => {
+    // Manually define the sections you want to scroll through
+    const sections = ['main-home', 'home-description', 'services-section'];
+  
+    let currentSectionId = null;
+  
+    // Loop through the manually defined sections and check which one is in or near the viewport
+    sections.forEach((sectionId) => {
+      const section = document.getElementById(sectionId);
+      const rect = section?.getBoundingClientRect();
+  
+      console.log('Section:', sectionId, 'Rect:', rect);
+  
+      // Check if the top of the section is near or within the viewport
+      if (rect?.top >= -50 && rect?.top <= window.innerHeight / 2) {
+        console.log('test', sectionId);
+        currentSectionId = sectionId;
+      }
+    });
+  
+    // Scroll logic based on the current section ID
+    switch (currentSectionId) {
+      case 'main-home':
+        window.scrollTo({ top: document.getElementById('home-description').offsetTop, behavior: 'smooth',block:'start' });
+        break;
+      case 'home-description':
+        window.scrollTo({ top: document.getElementById('services-section').offsetTop, behavior: 'smooth' });
+        break;
+      default:
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top if no section is found
     }
   };
-
+  
   return (
     <div style={{ 
       position: 'fixed', 
