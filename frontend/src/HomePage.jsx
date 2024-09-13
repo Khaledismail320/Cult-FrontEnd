@@ -18,7 +18,7 @@ const HomePage = () => {
 
 
             <div className="home-container">
-                <div className="background-overlay"></div>
+                <div id='main-home' className="background-overlay"></div>
                 <div className="text-container">
                     <label className="leagueSpartan title">
                         Empowering Brands with Creative Digital Solutions
@@ -29,7 +29,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <div id='home-description' >
+            <div id='home-description' class="homeDescriptionSection">
                 <div class="image-text-container">
                     <img src={descriptionImage} alt="descriptionImage" class="imageStyle" />
                     <p class="textStyle">At Cult Agency, we specialize in transforming ideas into powerful digital experiences. With a focus on creativity, strategy, and results, we help businesses thrive in the digital age. Whether you need a stunning website, a compelling marketing strategy, or eye-catching visuals, our team is here to elevate your brand. 

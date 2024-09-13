@@ -38,7 +38,7 @@ const Footer = () => {
       className='leagueSpartan'
       borderTop="4px solid white"
       p={6}
-      height='500px'
+      
     >
         
       <Stack spacing={4}>
@@ -91,7 +91,11 @@ const Footer = () => {
         </Stack>
       </Stack>
     </Box>
+    <br/>
+    <br/>
+
     </div>
+    
   );
 }
 
