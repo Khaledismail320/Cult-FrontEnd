@@ -35,7 +35,7 @@ const ContactUs = () => {
         e.preventDefault();
         console.log(formData); // Handle the form submission here (e.g., send data to a backend)
         await axios.post('http://127.0.0.1:8000/contactus/newMessage',formData).then(()=>{
-            onOpen();
+            // onOpen();
             console.log("success")
         }
             
@@ -46,7 +46,7 @@ const ContactUs = () => {
         
         
         // Show success popup when form is successfully submitted
-        // onOpen();
+        onOpen();
       };
 
   return (
